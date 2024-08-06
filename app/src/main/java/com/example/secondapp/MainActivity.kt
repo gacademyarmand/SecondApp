@@ -16,10 +16,17 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val button = findViewById<Button>(R.id.resView)
-        button?.setOnClickListener()
+        val buttonResView = findViewById<Button>(R.id.resView)
+        buttonResView?.setOnClickListener()
         {
             val intent = Intent(this, RecyclingView::class.java)
+            startActivity(intent)
+        }
+
+        val buttonNotView = findViewById<Button>(R.id.notView)
+        buttonNotView?.setOnClickListener()
+        {
+            val intent = Intent(this, NotificationView::class.java)
             startActivity(intent)
         }
     }

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,13 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SecondApp"
         tools:targetApi="31">
+        <activity
+            android:name=".NotificationView"
+            android:exported="false" />
 
         <receiver
             android:name=".FlightReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="ihave.flight"/>
+                <action android:name="ihave.flight" />
             </intent-filter>
         </receiver>
 
@@ -40,7 +44,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RecyclingView"></activity>
+        <activity android:name=".RecyclingView" />
     </application>
 
 </manifest>
